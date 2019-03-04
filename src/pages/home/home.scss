@@ -1,0 +1,30 @@
+page-home {
+    .img_Login{
+        text-align: center;
+        width: 80%;
+        border-radius: 70%;
+        margin: 50px auto 0 auto;
+        line-height: 100px;
+    }
+    .bg_Login{
+        background: linear-gradient(to top,#ffffff 0%,#000000 80% );
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    .input_Login{
+        background-color: transparent;
+        line-height: 20px;
+    }
+    .label_Login{
+        font-size: 14px;
+        color: red;
+    }
+    .buton_Login{
+        font-size: 18px;
+        color: red;
+    }
+    .button{
+        bottom: -15px;
+    }
+}
