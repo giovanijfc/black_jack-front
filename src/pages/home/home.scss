@@ -27,4 +27,11 @@ page-home {
     .button{
         bottom: -15px;
     }
+    .alert{
+      background-color: #F35E5D !important;
+      background: #F35E5D  !important;
+      color: red !important;
+      $alert-md-background-color: #F35E5D;
+      $alert-ios-background: #F35E5D;
+    }
 }
