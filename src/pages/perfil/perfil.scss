@@ -1,3 +1,38 @@
 page-perfil {
+    .bg_Login{
+        background: linear-gradient(to top,#ffffff 0%,#000000 80% );
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    .label_Perfil{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .img_Perfil{
+        margin: 20px auto 0 auto;
+        background-color: #aaa;
+        border-radius: 40%;
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        }
 
+    .bg_Header{
+            background-color: dimgrey;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }  
+    .t_Perfil{
+        color: black;
+        text-align: center;
+        margin: 40px;
+    }
 }
+
+
+

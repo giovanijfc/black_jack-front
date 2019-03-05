@@ -11,7 +11,7 @@ export class UsuarioService{
     constructor(public http: HttpClient){   
     }
 
-    find(email: string) : Observable<UsuarioDTO>{
-        return this.http.get<UsuarioDTO>(`${API_CONFIG.baseUrl}/email?value=${email}`)
+    findByEmail(email: string) : Observable<UsuarioDTO>{
+        return this.http.get<UsuarioDTO>(`${API_CONFIG.baseUrl}/21/user/email?value=${email}`)
     }
 }

@@ -1,8 +1,8 @@
 interface UsuarioDTO{
-    id: string;
+    idUsuario: string;
     nome: string;
     email: string;
     vitorias: string;
     derrotas: string;
-    emprates: string;
+    empates: string;
 }

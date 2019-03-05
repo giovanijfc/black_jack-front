@@ -1,14 +1,21 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Perfil</ion-title>
+    <ion-title >Perfil</ion-title>
   </ion-navbar>
 
 </ion-header>
-
-
-<ion-content padding>
-
+<ion-content padding class="bg_Login">
+  <ion-avatar class="img_Perfil">
+   <img src="assets/imgs/profile.jpg" >
+  </ion-avatar>
+<div class="t_Perfil">
+  <h1>{{usuario?.nome}}</h1>
+  <h3>{{usuario?.email}}</h3>
+  <h5>Vitorias:  {{usuario?.vitorias}}</h5>
+  <h5>Derrotas:  {{usuario?.derrotas}}</h5>
+  <h5>Empates:  {{usuario?.empates}}</h5>
+</div>
 </ion-content>

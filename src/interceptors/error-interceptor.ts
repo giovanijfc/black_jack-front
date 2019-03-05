@@ -24,12 +24,16 @@ export class ErrorInterceptor implements HttpInterceptor{
              if(!errorObj.status){
                 errorObj = JSON.parse(errorObj);
              }
+             errorObj.title
              console.log("Erro detectado pelo interceptor")
              console.log(errorObj);
 
             switch(errorObj.status){
             case 401:
             this.handle401();
+            break;
+            default:
+            this.defaultHandler(errorObj);
             break;
             }
 
@@ -42,12 +46,21 @@ export class ErrorInterceptor implements HttpInterceptor{
             title: 'Erro 401: Falha de autenticação',
             message: 'Email ou senha incorretos!',
             enableBackdropDismiss: false,
-            buttons: ['Continuar']
+            buttons: ['OK']
            
           });
           alert.present();
         }
+    defaultHandler(obj: any){
+        let alert = this.alertCtrl.create({
+            title: obj.status+": "+ obj.error,
+            message: obj.message,
+            enableBackdropDismiss: false,
+            buttons:['OK']
+        });
+        alert.present();
     }
+}
 
 
 
