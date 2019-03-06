@@ -24,7 +24,6 @@ export class PerfilPage {
     this.usuarioService.findByEmail(localUser.email)
      .subscribe(response =>{
       this.usuario = response;
-      console.log(this.usuario);
      },
      error=> {});
     }

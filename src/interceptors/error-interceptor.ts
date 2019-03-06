@@ -31,10 +31,10 @@ export class ErrorInterceptor implements HttpInterceptor{
             switch(errorObj.status){
             case 401:
             this.handle401();
-            break;
-            default:
-            this.defaultHandler(errorObj);
-            break;
+            break;    
+            case 550:
+            this.handle400();
+            break; 
             }
 
              return Observable.throw(error);
@@ -43,14 +43,26 @@ export class ErrorInterceptor implements HttpInterceptor{
 
     handle401(){
         let alert = this.alertCtrl.create({
-            title: 'Erro 401: Falha de autenticação',
-            message: 'Email ou senha incorretos!',
+            title: 'Error 401: Authentication failure',
+            message: 'Incorrect email or password!',
             enableBackdropDismiss: false,
             buttons: ['OK']
            
           });
           alert.present();
         }
+
+    handle400(){
+        let alert = this.alertCtrl.create({
+            title: 'Error 400: Data Integrity',
+            message: 'E-mail already registered',
+            enableBackdropDismiss: false,
+            buttons: ['OK']
+           
+          });
+          alert.present();
+        }
+    
     defaultHandler(obj: any){
         let alert = this.alertCtrl.create({
             title: obj.status+": "+ obj.error,

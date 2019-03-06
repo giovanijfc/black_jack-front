@@ -12,10 +12,11 @@
    <img src="assets/imgs/profile.jpg" >
   </ion-avatar>
 <div class="t_Perfil">
-  <h1>{{usuario?.nome}}</h1>
-  <h3>{{usuario?.email}}</h3>
-  <h5>Vitorias:  {{usuario?.vitorias}}</h5>
-  <h5>Derrotas:  {{usuario?.derrotas}}</h5>
-  <h5>Empates:  {{usuario?.empates}}</h5>
+  <h1><p class="bolder">{{usuario?.nome}}</p></h1>
+  <h3><p class="bolder">{{usuario?.email}}</p></h3>
+  <h4><p class="bolder">PERMISSÕES: {{usuario?.perfis}}</p></h4>
+  <h5><p class="bolder">Vitorias:  {{usuario?.vitorias}}</p></h5>
+  <h5><p class="bolder">Derrotas:  {{usuario?.derrotas}}</p></h5>
+  <h5><p class="bolder">Empates:  {{usuario?.empates}}</p></h5>
 </div>
 </ion-content>

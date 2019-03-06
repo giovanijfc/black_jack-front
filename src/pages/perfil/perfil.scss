@@ -22,15 +22,19 @@ page-perfil {
         }
 
     .bg_Header{
-            background-color: dimgrey;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
+        background-color: dimgrey;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
         }  
     .t_Perfil{
-        color: black;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color:black;
         text-align: center;
         margin: 40px;
+    }
+    .bolder{
+        font-weight: bolder;
     }
 }
 

@@ -6,14 +6,17 @@
   
   <ion-item class="input_Login">
       <ion-label color="danger" stacked><p class="label_Login"><b>Email</b></p></ion-label>
-      <ion-input [(ngModel)]="creds.email" clearInput name="email" type="text"></ion-input>
+      <ion-input [(ngModel)]="creds.email" clearInput name="email" type="text" placeholder="email@email.com"></ion-input>
   </ion-item>
 
   <ion-item class="input_Login">
-      <ion-label color="danger" stacked ><p class="label_Login"><b>Senha</b></p></ion-label>
-      <ion-input [(ngModel)]="creds.senha"  clearInput name="senha" type="password"></ion-input>
+      <ion-label color="danger" stacked ><p class="label_Login"><b>Password</b></p></ion-label>
+      <ion-input [(ngModel)]="creds.senha"  clearInput name="senha" type="password" placeholder="************" ></ion-input>
   </ion-item>
   
   <button class="button" ion-button block clear (click)="login()"><p class="buton_Login"><b>Login</b></p></button>
   
+  <p class="lb_forgot" (click)="signup($event)">Forgot password?</p>
+  <p class="lb_register" (click)="signup($event)">Register-me</p>
+ 
 </ion-content>

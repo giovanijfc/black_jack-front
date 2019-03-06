@@ -1,0 +1,42 @@
+page-signup {
+    input{
+        color:white;
+    }
+    .bg_Signup{
+        background: linear-gradient(to top,#ffffff 0%,#000000 75% );
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    .title{
+        font-family: Arial, Helvetica, sans-serif;
+        color: red;
+        font-size: 30pt;
+        margin-left: 15px;
+    }
+    .lb_form{
+        background-color: transparent;
+    }
+    .lb_Signup{
+        font-size: 10pt;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        color: hsl(0, 100%, 51%);
+    }
+    .btn_Signup{
+       bottom: -25px;
+       margin-left: 15px;
+       background-color: black;
+    }
+    .p_Signup{
+        font-size: 20px;
+        color: red;
+        font-weight: 600;
+    }
+    .p_Danger{
+        color: black;
+        font-weight: bolder;
+        font-size: 15px;
+        text-decoration: underline;
+    }
+}

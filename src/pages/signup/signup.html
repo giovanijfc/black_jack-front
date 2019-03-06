@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>signup</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="bg_Signup">
+
+  <h1 color="white"><p class="title">Register</p></h1>
+
+  <form [formGroup]="formGroup" (ngSubmit)="signupUser(); $event.preventDefault()">
+
+  <ion-item class="lb_form">
+    <ion-label stacked><p class="lb_Signup">Username*</p></ion-label>
+    <ion-input formControlName="nome" clearInput  type="text"  clear placeholder="houhou12"  ></ion-input>
+  </ion-item>
+  <p class="p_Danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left>Invalid value</p>
+
+  <ion-item class="lb_form">
+    <ion-label stacked><p class="lb_Signup">Email*</p></ion-label>
+    <ion-input formControlName="email" clearInput  type="text"  clear  placeholder="trey@email.com"  ></ion-input>
+  </ion-item>
+  <p class="p_Danger" *ngIf="formGroup.controls.email.dirty && formGroup.controls.email.errors" margin-left>Invalid value</p>
+
+  <ion-item class="lb_form">
+    <ion-label stacked><p class="lb_Signup">Password*</p></ion-label>
+    <ion-input formControlName="senha" clearInput  type="password"   name="senha1" clear placeholder="************"></ion-input>
+  </ion-item>
+  <p class="p_Danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left>Invalid value</p>
+
+  <ion-item class="lb_form">
+    <ion-label stacked><p class="lb_Signup">Repeat your password*</p></ion-label>
+    <ion-input clearInput  type="password"  name="senha2" placeholder="************" clear></ion-input>
+  </ion-item>
+  <p class="p_Danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left>Invalid value</p>
+  <ion-item class="lb_form">
+    <ion-label stacked><p class="lb_Signup">Keyword(It will be used in case you lose your password)*<p></ion-label>
+    <ion-input formControlName="palavraChave" clearInput  type="text" clear  placeholder="evasnece" ></ion-input>
+  </ion-item>
+  <p class="p_Danger" *ngIf="formGroup.controls.palavraChave.dirty && formGroup.controls.palavraChave.errors" margin-left>Invalid value</p>
+     <button ion-button class="btn_Signup" (click)="signupUser()"><p class="p_Signup">Proceed</p></button>
+  </form>
+
+</ion-content>

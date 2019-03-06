@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, MenuController } from 'ionic-angular';
+import { NavController, MenuController, IonicPage } from 'ionic-angular';
 import { AuthService } from '../../services/auth.service';
+import { StorageService } from '../../services/storage.service';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -15,12 +17,25 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
      public menu: MenuController,
-     public auth: AuthService) {
+     public auth: AuthService,
+     public storage: StorageService) {
+  }
+  ionViewWillEnter(){
+    this.menu.swipeEnable(false);
+  }
+  ionViewWillLeave(){
+    this.menu.swipeEnable(true);
   }
 
   ionViewDidEnter(){
-    this.menu.swipeEnable(false);
+    this.auth.refresh_Token()
+     .subscribe(response =>{
+       this.auth.sucessfulLogin(response.headers.get('Authorization'));
+       this.navCtrl.setRoot('PerfilPage');
+     },
+     error =>{console.log("a")})
   }
+  
   
   login(){
     this.auth.authenticate(this.creds)
@@ -29,5 +44,9 @@ export class HomePage {
       this.navCtrl.setRoot('PerfilPage');
      },
      error =>{})
+  }
+
+  signup(){
+   this.navCtrl.push('SignupPage');
   }
 }

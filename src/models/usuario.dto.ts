@@ -5,4 +5,6 @@ interface UsuarioDTO{
     vitorias: string;
     derrotas: string;
     empates: string;
+    perfis: string[];
+    palavraChave: string;
 }

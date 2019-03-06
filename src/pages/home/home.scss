@@ -1,22 +1,31 @@
 page-home {
+    input{
+        color: lightcyan;
+    }
     .img_Login{
         text-align: center;
-        width: 80%;
+        width: 100%;
         border-radius: 70%;
-        margin: 50px auto 0 auto;
-        line-height: 100px;
+        margin: 15px auto 0 auto;
+        line-height: 130px;
     }
     .bg_Login{
-        background: linear-gradient(to top,#ffffff 0%,#000000 80% );
+        background: linear-gradient(to top,#ffffff 0%,#000000 75% );
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
     }
+    
     .input_Login{
         background-color: transparent;
         line-height: 20px;
+        --placeholder-color: 'danger';
     }
-    .label_Login{
+    ::-webkit-input-placeholder{
+        font-weight: bolder;
+      }
+
+    .label_Login{    
         font-size: 14px;
         color: red;
     }
@@ -26,12 +35,31 @@ page-home {
     }
     .button{
         bottom: -15px;
+        margin-left: 0px;
     }
     .alert{
-      background-color: #F35E5D !important;
-      background: #F35E5D  !important;
-      color: red !important;
-      $alert-md-background-color: #F35E5D;
-      $alert-ios-background: #F35E5D;
+        background-color: #F35E5D !important;
+        background: #F35E5D  !important;
+        color: red !important;
+        $alert-md-background-color: #F35E5D;
+        $alert-ios-background: #F35E5D;
+    }
+    .lb_register{   
+        pointer-events:visible!important;
+        font-weight: 550;
+        font-size: 15px;
+        margin-top: 20px;
+        margin-left: 13px;
+        color: black;
+        text-decoration: underline;
+    }
+    .lb_forgot{
+        pointer-events:visible!important;
+        font-weight: 550;
+        font-size: 15px;
+        color:black;
+        margin-top: 30px;
+        margin-left: 13px;
+        text-decoration: underline;
     }
 }
