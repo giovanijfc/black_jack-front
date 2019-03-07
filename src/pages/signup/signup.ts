@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { MenuController } from 'ionic-angular/components/app/menu-controller';
 import { UsuarioService } from '../../services/domain/usuario.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { PerfilPage } from '../perfil/perfil';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({

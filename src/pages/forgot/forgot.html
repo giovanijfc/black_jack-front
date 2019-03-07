@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>Forgot</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="bg_Forgot">
+    <h1><p class="p_Title">Forgot your password?</p></h1>
+
+    <ion-item class="lb_Form">
+      <ion-label stacked><p class="p_Forgot">Email*</p></ion-label>
+      <ion-input [(ngModel)]="newPass.email" clearInput clear name="email" type="text" placeholder="email@email.com"></ion-input>
+    </ion-item>
+
+    <ion-item class="lb_Form">
+        <ion-label stacked><p class="p_Forgot">Keyword*</p></ion-label>
+        <ion-input [(ngModel)]="newPass.palavraChave" clearInput clear name="palavraChave" type="text" placeholder="REQUIRED"></ion-input>
+      </ion-item>
+
+      <ion-item class="lb_Form">
+          <ion-label stacked><p class="p_Forgot">New password*</p></ion-label>
+          <ion-input [(ngModel)]="newPass.newSenha" clearInput clear name="newSenha" type="password" placeholder="*********"></ion-input>
+        </ion-item>
+
+    <button ion-button class="btn_Forgot" (click)="forgotPass()"><p class="p_button">Proceed</p></button>
+
+</ion-content>

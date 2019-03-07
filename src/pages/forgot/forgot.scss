@@ -1,0 +1,36 @@
+page-forgot {
+    input{
+        color: white;
+    }
+    .bg_Forgot{
+        background: linear-gradient(to top,#ffffff 0%,#000000 75% );
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    .p_Title{
+        font-size: 22pt;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+        color: red;
+        margin-top: 50px;
+        margin-left: 15px;
+    }
+    .lb_Form{
+        background-color: transparent;
+    }
+    .p_Forgot{
+        font-weight: 600;
+        color: red;
+    }
+    .p_button{
+        font-size: 20px;
+        color: red;
+        font-weight: 600;   
+    }
+    .btn_Forgot{
+        bottom: -25px;
+        margin-left: 15px;
+        background-color: black;
+    }
+}

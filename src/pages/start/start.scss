@@ -1,0 +1,29 @@
+page-start {
+
+    .bg_Start{
+        background: linear-gradient(to top,#ffffff 0%,#000000 70% );
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    .p_Start{        
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color:red;
+    }
+    .t_Start{
+        margin-bottom: 20px;
+        font-weight: bolder;
+        color:red;
+    }
+    .btn_Start{
+        background-color: black;
+        margin-top: 20px;
+        margin-left: 140px;
+    }
+    .p_Button{
+        font-size: 20px;
+        color: red;
+        font-weight: 600;   
+    }
+}

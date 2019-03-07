@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { AuthService } from '../services/auth.service';
+import { StartPage } from '../pages/start/start';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,12 +22,13 @@ export class MyApp {
      public statusBar: StatusBar,
      public splashScreen: SplashScreen,
      public auth: AuthService) {
-    this.initializeApp();
+     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [     
-      { title: 'Perfil', component: PerfilPage },
-      { title: 'Logout', component: ''},     
+      {title: 'Start', component: StartPage},
+      { title: 'Profile', component: PerfilPage },   
+      { title: 'Logout', component: ''}    
     ];
 
   }

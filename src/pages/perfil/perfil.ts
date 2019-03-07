@@ -6,7 +6,7 @@ import { StorageService } from '../../services/storage.service';
 @IonicPage()
 @Component({
   selector: 'page-perfil',
-  templateUrl: 'perfil.html',
+  templateUrl: 'perfil.html', 
 })
 export class PerfilPage {
 

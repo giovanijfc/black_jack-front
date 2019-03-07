@@ -1,6 +1,6 @@
 page-perfil {
     .bg_Login{
-        background: linear-gradient(to top,#ffffff 0%,#000000 80% );
+        background: linear-gradient(to top,#ffffff 0%,#000000 70% );
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -12,13 +12,13 @@ page-perfil {
         font-size: 18px;
     }
     .img_Perfil{
-        margin: 20px auto 0 auto;
         background-color: #aaa;
         border-radius: 40%;
         width: 300px;
         height: 200px;
         overflow: hidden;
         position: relative;
+        margin: 17px;
         }
 
     .bg_Header{
@@ -28,13 +28,50 @@ page-perfil {
         background-size: contain;
         }  
     .t_Perfil{
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         color:black;
-        text-align: center;
+        text-align: left;
         margin: 40px;
     }
     .bolder{
+        color: black;
         font-weight: bolder;
+        font-size: 13pt;
+        margin: 10px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .icon_Label1{
+        font-size: 14pt;
+        font-weight: bolder;
+        font-style: underline;
+        text-decoration: underline;
+        color:green;
+        margin-left: 5px;
+    }
+    .icon_Label2{
+        font-size: 14pt;
+        font-weight: bolder;
+        font-style: underline;
+        text-decoration: underline;
+        color: red;
+    }
+    .icon_Label3{
+        font-size: 14pt;
+        font-weight: bolder;
+        font-style: underline;
+        text-decoration: underline;
+        color: dimgray
+    }
+    .bg_Card{
+        background-color: transparent;
+    }
+    .bolder2{
+        color: black;
+        font-weight: bolder;
+        font-size: 14pt;
+        margin-top: 30px;
+        margin-left: 10px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 }
 

@@ -3,20 +3,33 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title >Perfil</ion-title>
+    <ion-title >Profile</ion-title>
   </ion-navbar>
-
 </ion-header>
+
 <ion-content padding class="bg_Login">
-  <ion-avatar class="img_Perfil">
-   <img src="assets/imgs/profile.jpg" >
-  </ion-avatar>
-<div class="t_Perfil">
-  <h1><p class="bolder">{{usuario?.nome}}</p></h1>
-  <h3><p class="bolder">{{usuario?.email}}</p></h3>
-  <h4><p class="bolder">PERMISSÕES: {{usuario?.perfis}}</p></h4>
-  <h5><p class="bolder">Vitorias:  {{usuario?.vitorias}}</p></h5>
-  <h5><p class="bolder">Derrotas:  {{usuario?.derrotas}}</p></h5>
-  <h5><p class="bolder">Empates:  {{usuario?.empates}}</p></h5>
-</div>
+  
+
+  <ion-card  class="bg_Card">
+              
+      <ion-card-header >
+          <ion-avatar class="img_Perfil">
+              <img src="assets/imgs/profile.jpg" >
+          </ion-avatar>
+      <div class="bolder2">
+        Information:
+      </div>
+      </ion-card-header>
+      <ion-card-content>
+          <p class="bolder">Name: {{usuario?.nome}}</p>
+          <p class="bolder">Email: {{usuario?.email}}</p>
+          <p class="bolder">Permissions: {{usuario?.perfis}}</p>
+        
+    <ion-icon name="trending-up" class="icon_Label1">&nbsp;Victories:{{usuario?.vitorias}}&nbsp;</ion-icon>
+    <ion-icon name="trending-down" class="icon_Label2">&nbsp;Defeats:{{usuario?.derrotas}}&nbsp;</ion-icon>
+    <ion-icon name="swap"class="icon_Label3">&nbsp;Draws:{{usuario?.empates}}&nbsp;</ion-icon>
+      </ion-card-content>
+    
+    </ion-card>
+
 </ion-content>

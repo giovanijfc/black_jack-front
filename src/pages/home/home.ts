@@ -31,7 +31,7 @@ export class HomePage {
     this.auth.refresh_Token()
      .subscribe(response =>{
        this.auth.sucessfulLogin(response.headers.get('Authorization'));
-       this.navCtrl.setRoot('PerfilPage');
+       this.navCtrl.setRoot('StartPage');
      },
      error =>{console.log("a")})
   }
@@ -41,12 +41,15 @@ export class HomePage {
     this.auth.authenticate(this.creds)
      .subscribe(response => {
       this.auth.sucessfulLogin(response.headers.get('Authorization'))
-      this.navCtrl.setRoot('PerfilPage');
+      this.navCtrl.setRoot('StartPage');
      },
      error =>{})
   }
 
   signup(){
    this.navCtrl.push('SignupPage');
+  }
+  forgot(){
+    this.navCtrl.push('ForgotPage');
   }
 }

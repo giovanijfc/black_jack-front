@@ -43,4 +43,13 @@ export class AuthService{
     logout(){
         this.storage.setLocalUser(null);
     }
+
+    forgot(newPass: ChangeNewPassDTO){
+        return this.http.put(`${API_CONFIG.baseUrl}/auth/forgot`,
+        newPass,
+        {
+            observe: 'response',
+            responseType: 'text'
+        });
+    }
 }

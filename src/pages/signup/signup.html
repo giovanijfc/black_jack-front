@@ -1,14 +1,14 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>signup</ion-title>
+    <ion-title>Register</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding class="bg_Signup">
 
-  <h1 color="white"><p class="title">Register</p></h1>
+  <h1 ><p class="title">Register</p></h1>
 
   <form [formGroup]="formGroup" (ngSubmit)="signupUser(); $event.preventDefault()">
 
@@ -30,17 +30,15 @@
   </ion-item>
   <p class="p_Danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left>Invalid value</p>
 
-  <ion-item class="lb_form">
-    <ion-label stacked><p class="lb_Signup">Repeat your password*</p></ion-label>
-    <ion-input clearInput  type="password"  name="senha2" placeholder="************" clear></ion-input>
-  </ion-item>
   <p class="p_Danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left>Invalid value</p>
   <ion-item class="lb_form">
     <ion-label stacked><p class="lb_Signup">Keyword(It will be used in case you lose your password)*<p></ion-label>
     <ion-input formControlName="palavraChave" clearInput  type="text" clear  placeholder="evasnece" ></ion-input>
   </ion-item>
   <p class="p_Danger" *ngIf="formGroup.controls.palavraChave.dirty && formGroup.controls.palavraChave.errors" margin-left>Invalid value</p>
-     <button ion-button class="btn_Signup" (click)="signupUser()"><p class="p_Signup">Proceed</p></button>
-  </form>
+  <button ion-button class="btn_Signup" (click)="signupUser()"><p class="p_Signup">Proceed</p></button>
+
+</form>
+  
 
 </ion-content>

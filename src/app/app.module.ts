@@ -13,11 +13,14 @@ import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
 import { HomePage } from '../pages/home/home';
+import { PerfilPage } from '../pages/perfil/perfil';
+import { StartPage } from '../pages/start/start';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    PerfilPage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    PerfilPage
   ],
   providers: [
     StatusBar,

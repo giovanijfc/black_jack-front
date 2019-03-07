@@ -32,8 +32,8 @@ export class ErrorInterceptor implements HttpInterceptor{
             case 401:
             this.handle401();
             break;    
-            case 550:
-            this.handle400();
+            case 400:
+            this.defaultHandler(errorObj);
             break; 
             }
 
@@ -54,11 +54,10 @@ export class ErrorInterceptor implements HttpInterceptor{
 
     handle400(){
         let alert = this.alertCtrl.create({
-            title: 'Error 400: Data Integrity',
+            title: 'Error 400: Invalid request',
             message: 'E-mail already registered',
             enableBackdropDismiss: false,
             buttons: ['OK']
-           
           });
           alert.present();
         }
