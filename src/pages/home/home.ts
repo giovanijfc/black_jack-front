@@ -33,7 +33,7 @@ export class HomePage {
        this.auth.sucessfulLogin(response.headers.get('Authorization'));
        this.navCtrl.setRoot('StartPage');
      },
-     error =>{console.log("a")})
+     error =>{})
   }
   
   

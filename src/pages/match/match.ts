@@ -1,22 +1,20 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-
 @IonicPage()
 @Component({
-  selector: 'page-start',
-  templateUrl: 'start.html',
+  selector: 'page-match',
+  templateUrl: 'match.html',
 })
-export class StartPage {
+export class MatchPage {
+
+  cartas: CartasDTO;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad StartPage');
+    console.log('ionViewDidLoad MatchPage');
   }
 
-  start(){
-    this.navCtrl.setRoot('MatchPage');
-  }
 }

@@ -14,7 +14,7 @@ import { StartPage } from '../pages/start/start';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: string = 'HomePage';
 
   pages: Array<{title: string, component: any}>;
 
@@ -26,8 +26,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [     
-      {title: 'Start', component: StartPage},
-      { title: 'Profile', component: PerfilPage },   
+      {title: 'Start', component: 'StartPage'},
+      { title: 'Profile', component: 'PerfilPage' },   
       { title: 'Logout', component: ''}    
     ];
 
@@ -46,7 +46,7 @@ export class MyApp {
    switch(page.title){
       case 'Logout':
       this.auth.logout();
-      this.nav.setRoot(HomePage);
+      this.nav.setRoot('HomePage');
       break;
       default:
       this.nav.setRoot(page.component);

@@ -12,15 +12,13 @@ import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
-import { HomePage } from '../pages/home/home';
-import { PerfilPage } from '../pages/perfil/perfil';
-import { StartPage } from '../pages/start/start';
+import { HomeModule } from '../pages/home/home.module';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    PerfilPage
+    
   ],
   imports: [
     BrowserModule,
@@ -30,8 +28,6 @@ import { StartPage } from '../pages/start/start';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    PerfilPage
   ],
   providers: [
     StatusBar,
