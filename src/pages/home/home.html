@@ -9,14 +9,18 @@
       <ion-input [(ngModel)]="creds.email" clearInput name="email" type="text" placeholder="email@email.com"></ion-input>
   </ion-item>
 
+
   <ion-item class="input_Login">
       <ion-label color="danger" stacked ><p class="label_Login"><b>Password</b></p></ion-label>
       <ion-input [(ngModel)]="creds.senha"  clearInput name="senha" type="password" placeholder="************" ></ion-input>
   </ion-item>
-  
+
   <button class="button" ion-button block clear (click)="login()"><p class="buton_Login"><b>Login</b></p></button>
   
   <p class="lb_forgot" (click)="forgot()">Forgot password?</p>
   <p class="lb_register" (click)="signup()">Register-me</p>
  
-</ion-content>
+  <div class="pl_bot">
+   <p class="p">Create By Giovani Fonseca</p> <lottie-animation-view  [options]="lottieConfig"  [width]="50" [height]="50"></lottie-animation-view>
+  </div>
+  </ion-content>

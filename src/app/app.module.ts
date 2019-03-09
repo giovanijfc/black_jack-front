@@ -14,6 +14,7 @@ import { StorageService } from '../services/storage.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
 import { MatchService } from '../services/domain/match.service';
 import { ComparatorUtil } from '../utilities/comparaton.util';
+import { LottieAnimationViewModule } from 'ng-lottie';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ComparatorUtil } from '../utilities/comparaton.util';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp)  
   ],
   bootstrap: [IonicApp],
   entryComponents: [

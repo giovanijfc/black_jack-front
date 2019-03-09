@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, MenuController, IonicPage } from 'ionic-angular';
 import { AuthService } from '../../services/auth.service';
 import { StorageService } from '../../services/storage.service';
+import { LottieAnimationViewModule } from 'ng-lottie';
 
 @IonicPage()
 @Component({
@@ -15,10 +16,18 @@ export class HomePage {
     senha: ""
   };
 
+  lottieConfig: any;
+
   constructor(public navCtrl: NavController,
      public menu: MenuController,
      public auth: AuthService,
      public storage: StorageService) {
+      LottieAnimationViewModule.forRoot()
+      this.lottieConfig ={
+        path: '/assets/imgs/Animations/loginSucess.json',
+        autoplay: true,
+        loop: false
+       }
   }
   ionViewWillEnter(){
     this.menu.swipeEnable(false);
@@ -31,6 +40,12 @@ export class HomePage {
     this.auth.refresh_Token()
      .subscribe(response =>{
        this.auth.sucessfulLogin(response.headers.get('Authorization'));
+       LottieAnimationViewModule.forRoot()
+       this.lottieConfig ={
+        path: '/assets/imgs/Animations/loginSucess.json',
+        autoplay: true,
+        loop: false
+       }
        this.navCtrl.setRoot('StartPage');
      },
      error =>{})
@@ -40,7 +55,7 @@ export class HomePage {
   login(){
     this.auth.authenticate(this.creds)
      .subscribe(response => {
-      this.auth.sucessfulLogin(response.headers.get('Authorization'))
+      this.auth.sucessfulLogin(response.headers.get('Authorization')) 
       this.navCtrl.setRoot('StartPage');
      },
      error =>{})
