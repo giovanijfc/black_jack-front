@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MatchService } from '../../services/domain/match.service';
 
 
 @IonicPage()
@@ -9,14 +10,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class StartPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad StartPage');
   }
 
   start(){
-    this.navCtrl.setRoot('MatchPage');
+    this.navCtrl.push('MatchPage');
   }
 }

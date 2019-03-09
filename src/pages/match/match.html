@@ -1,9 +1,6 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title class="title">Match</ion-title>
   </ion-navbar>
 
@@ -11,5 +8,9 @@
 
 
 <ion-content padding class="bg_Match">
-
+    
+ 
+  <button ion-button (click)= "start()">Start picking up</button>
+  <button ion-button (click)= "proceed()">Keep on picking up</button>
+  <button ion-button (click)= "notProceed()">Stop picking up</button>
 </ion-content>

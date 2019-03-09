@@ -12,8 +12,8 @@ import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
-import { HomeModule } from '../pages/home/home.module';
-
+import { MatchService } from '../services/domain/match.service';
+import { ComparatorUtil } from '../utilities/comparaton.util';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,9 @@ import { HomeModule } from '../pages/home/home.module';
     AuthInterceptorProvider,
     ErrorInterceptorProvider,
     AuthService,
-    StorageService
+    StorageService,
+    MatchService,
+    ComparatorUtil
   ]
 })
 export class AppModule {}
