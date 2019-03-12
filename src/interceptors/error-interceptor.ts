@@ -2,6 +2,8 @@ import { Injectable, Component } from "@angular/core";
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HTTP_INTERCEPTORS,  } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx'; // IMPORTANTE: IMPORT ATUALIZADO
 import { AlertController } from "ionic-angular";
+import { StorageService } from "../services/storage.service";
+import { AuthService } from "../services/auth.service";
 
 
 @Injectable()
@@ -36,7 +38,6 @@ export class ErrorInterceptor implements HttpInterceptor{
             this.defaultHandler(errorObj);
             break; 
             }
-
              return Observable.throw(error);
          }) as any;
     }
@@ -62,6 +63,7 @@ export class ErrorInterceptor implements HttpInterceptor{
           alert.present();
         }
     
+    
     defaultHandler(obj: any){
         let alert = this.alertCtrl.create({
             title: obj.status+": "+ obj.error,
@@ -71,9 +73,7 @@ export class ErrorInterceptor implements HttpInterceptor{
         });
         alert.present();
     }
-}
-
-
+}  
 
 export const ErrorInterceptorProvider ={
     provide: HTTP_INTERCEPTORS,

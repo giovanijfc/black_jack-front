@@ -12,14 +12,17 @@ import { ComparatorUtil } from '../../utilities/comparaton.util';
 export class MatchPage {
 
   idPartida: any;
-  match: any;
+  match: any = null;
   url_config: string[];
   urls: UrlImagesDTO[] = [];
+  urls2: UrlImagesDTO[] = [];
   contador: any;
   button1: boolean;
   button2: boolean;
   partidaFinalize: string;
   soma: any;
+  somaMaq: any = 0;
+  
 
 
   constructor(public navCtrl: NavController,
@@ -29,45 +32,37 @@ export class MatchPage {
     public comparator: ComparatorUtil,
     public alertCtrl: AlertController) {
     var a;
-    for (a = 0; a < 12; a++)this.urls[a] = { urlGrande: "", urlPequena: "" }
+    for (a = 0; a < 52; a++)this.urls[a] = { urlGrande: "", urlPequena: "" }
+    var b;
+    for (b = 0; b < 52; b++)this.urls2[b] = { urlGrande: "", urlPequena: "" }
   }
 
   ionViewWillEnter() {
     this.menu.swipeEnable(false);
-    this.partidaFinalize = "Não finalizada!";
+    this.partidaFinalize = "Not finishid!";
   }
 
   start() {
     this.contador = 0;
     this.matchService.start()
-      .subscribe(response => {
-      
+      .subscribe(response => { 
+        this.somaMaq = 0;
         var c;
-        for (c = 0; c < this.urls.length; c++) { this.urls.splice(i) }
-
+        for (c = 0; c < this.urls.length; c++) { this.urls.splice(c) }
+        var b;
+        for (b = 0; b < 52; b++){this.urls2.splice(b)}
         var a;
-        for (a = 0; a < 12; a++)this.urls[a] = { urlGrande: "", urlPequena: "" }
-
+        for (a = 0; a < 52; a++)this.urls[a] = { urlGrande: "", urlPequena: "" }
         this.match = response;
-        console.log(this.match);
         this.partidaFinalizada(response);
-
         this.idPartida = this.match.dados.idPartida;
-
         this.soma = this.match.soma;
-
         this.urls[this.contador] = (this.comparator.compareLetter(response.dados.carUsuPar, this.contador));
         ++this.contador;
         this.urls[this.contador] = (this.comparator.compareLetter(response.dados.carUsuPar, this.contador));
-
         if (this.soma == 21) {
           this.alertNotProceed(response);
         }
-
-        var i;
-        for (i = 0; i < this.urls.length; ++i) { console.log(this.urls[i]); }
-        console.log(this.soma);
-
         ++this.contador;
       });
   }
@@ -76,7 +71,7 @@ export class MatchPage {
     this.matchService.proceed(this.idPartida)
       .subscribe(response => {
         this.match = response;
-        console.log(this.match);
+       
         this.partidaFinalizada(response);
         this.soma = this.match.soma;
         if (this.match.mensagem == "Esta Partida já foi finalizada!" || this.soma == 21 || this.soma > 21) {
@@ -95,8 +90,8 @@ export class MatchPage {
           this.urls[this.contador] = (this.comparator.compareLetter(response.dados.carUsuPar, this.contador));
           ++this.contador;
           var i;
-          for (i = 0; i < this.urls.length; ++i) { console.log(this.urls[i]); }
-          console.log(this.soma);
+         
+          
         }
       },
         error => { this.alertNotProceed(this.match) })
@@ -105,12 +100,25 @@ export class MatchPage {
   notProceed() {
     this.matchService.notProceed(this.idPartida)
       .subscribe(response => {
-
+      let contador2 = 0;  
+      var i;
+      
+      for(i=0;i < response.dados.carUsuPar.length; ++i){
+      if(response.dados.carUsuPar[i].usuarios.idUsuario == 1){
+      this.urls2[contador2] = this.comparator.compareLetter(response.dados.carUsuPar, i);
+      
+      this.somaMaq = response.dados.carUsuPar[i].cartas.valor + this.somaMaq;
+      
+      ++contador2;
+      }
+    }
+      
         this.partidaFinalizada(response);
         this.match = response;
-        console.log(this.match);
+       
         this.alertNotProceed(response);
-      })
+    
+    })
   }
 
 
@@ -125,11 +133,25 @@ export class MatchPage {
 
   partidaFinalizada(response: any) {
     if (response.dados.partidaFinalizada != true) {
-      this.partidaFinalize = "Não finalizada!";
+      this.partidaFinalize = "Not finished!";
     } else {
-      this.partidaFinalize = "Partida finalizada!"
+      this.partidaFinalize = "Game finished!"
     }
   }
+  showMachineChart(){
+    if(this.match == null){
+      let alerta = this.alertCtrl.create({
+        title: 'Alert',
+        message: "Departure does not exist",
+        buttons: [{ text: 'ok', }]
+      })
+      alerta.present();
+    }
+    else{
+    this.navCtrl.push('CartasMaquinaPage', {urls2: this.urls2,soma: this.somaMaq, partidaId: this.idPartida})
+    }
+  }
+ 
 }
 
 

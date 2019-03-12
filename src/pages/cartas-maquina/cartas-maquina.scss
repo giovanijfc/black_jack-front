@@ -1,0 +1,39 @@
+page-cartas-maquina {
+    .bg_Match{
+        background: linear-gradient(to top, #228B22);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      } 
+      p{
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          font-weight: bolder;
+      }
+      .center{
+         margin-left: 65px;
+         color: white;
+      }    
+      
+      .p_posi{
+        text-align: right;
+        margin-top: -34.5px;
+        color: white;
+        margin-right: -5px;
+      }
+      .p1{
+          color: black;
+          text-align: center;
+      }
+      .p_posi1{
+        text-align:right;
+        margin-top: -34.5px;
+        margin-right: 85px;
+        color: white;
+      }
+      img{
+          margin-left: 60px;
+          margin-left: 14px;
+          max-width: 125px;
+      }
+}

@@ -7,7 +7,7 @@ import { ResponseType } from "@angular/http";
 @Injectable()
 export class UsuarioService{
 
-    usuario: UsuarioDTO
+    usuario: UsuarioDTO;
 
     constructor(public http: HttpClient){   
     }

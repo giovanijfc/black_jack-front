@@ -8,24 +8,14 @@
 
 
 <ion-content padding class="bg_Match"> 
-  <p class="p1">Partida nº: {{idPartida}} </p>
+  <p class="p1">Departure n°: {{idPartida}} </p>
   <p class="p2">Status match: {{partidaFinalize}}</p>
-  <p class="p3">Suas Cartas/Sua quantidade:  {{soma}} </p>
+  <p class="p3">Your Letters / Your Quantity: {{soma}} </p>
   <button ion-button class="btn1"  (click)= "start()"><p class="p_button">Start picking up</p></button>
   <button ion-button class="btn2"  (click)= "proceed()"><p class="p_button">Keep on picking up</p></button>
   <button ion-button class="btn3"  (click)= "notProceed()"><p class="p_button">Stop picking up</p></button>
-          
-  <img [src]="urls[0].urlGrande">
-  <img [src]="urls[1].urlGrande">
-  <img [src]="urls[2].urlGrande">
-  <img [src]="urls[3].urlGrande">
-  <img [src]="urls[4].urlGrande">
-  <img [src]="urls[5].urlGrande">
-  <img [src]="urls[6].urlGrande">
-  <img [src]="urls[7].urlGrande">
-  <img [src]="urls[8].urlGrande">
-  <img [src]="urls[9].urlGrande">
-  <img [src]="urls[10].urlGrande">
-  <img [src]="urls[11].urlGrande">
-
+  <ion-label class="label" stacked (click)="showMachineChart()">Show Machine Chart</ion-label>
+  <img *ngFor="let cImgs of urls " [src]="cImgs.urlGrande" >
+ 
+  
 </ion-content>

@@ -6,7 +6,7 @@ export class ComparatorUtil{
 
     urls : UrlImagesDTO;
 
-    compareLetter(carUsuPartida: any[], i: string) : UrlImagesDTO{  
+    compareLetter(carUsuPartida: any[], i: number) : UrlImagesDTO{  
        
     
         let naipe = carUsuPartida[i].cartas.naipe;

@@ -16,26 +16,23 @@
     <ion-label stacked><p class="lb_Signup">Username*</p></ion-label>
     <ion-input formControlName="nome" clearInput  type="text"  clear placeholder="houhou12"  ></ion-input>
   </ion-item>
-  <p class="p_Danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left>Invalid value</p>
+  <p class="p_Danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left>*INVALID VALUE* Check if the name is without special characters and more than 6 characters and max 60</p>
 
   <ion-item class="lb_form">
     <ion-label stacked><p class="lb_Signup">Email*</p></ion-label>
     <ion-input formControlName="email" clearInput  type="text"  clear  placeholder="trey@email.com"  ></ion-input>
   </ion-item>
-  <p class="p_Danger" *ngIf="formGroup.controls.email.dirty && formGroup.controls.email.errors" margin-left>Invalid value</p>
-
+  <p class="p_Danger" *ngIf="formGroup.controls.email.dirty && formGroup.controls.email.errors" margin-left>* INVALID VALUE * If you are not giving to register, change the email, because you can already have this email registered!</p>
   <ion-item class="lb_form">
     <ion-label stacked><p class="lb_Signup">Password*</p></ion-label>
     <ion-input formControlName="senha" clearInput  type="password"   name="senha1" clear placeholder="************"></ion-input>
   </ion-item>
-  <p class="p_Danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left>Invalid value</p>
-
-  <p class="p_Danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left>Invalid value</p>
+  <p class="p_Danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left>* INVALID VALUE * Password at least 6 characters and max 35</p>
   <ion-item class="lb_form">
     <ion-label stacked><p class="lb_Signup">Keyword(It will be used in case you lose your password)*<p></ion-label>
     <ion-input formControlName="palavraChave" clearInput  type="text" clear  placeholder="evasnece" ></ion-input>
   </ion-item>
-  <p class="p_Danger" *ngIf="formGroup.controls.palavraChave.dirty && formGroup.controls.palavraChave.errors" margin-left>Invalid value</p>
+  <p class="p_Danger" *ngIf="formGroup.controls.palavraChave.dirty && formGroup.controls.palavraChave.errors" margin-left>* INVALID VALUE * password in the minimum 6 characters and max 20, if you can not register change the keyword because you can already have one with this value registered</p>
   <button ion-button class="btn_Signup" (click)="signupUser()"><p class="p_Signup">Proceed</p></button>
 
 </form>
