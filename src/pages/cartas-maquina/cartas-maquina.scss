@@ -10,30 +10,32 @@ page-cartas-maquina {
           font-size: 16px;
           font-weight: bolder;
       }
-      .center{
-         margin-left: 65px;
-         color: white;
+      .p3{
+       color: white;
+       text-align: center;
       }    
       
       .p_posi{
-        text-align: right;
-        margin-top: -34.5px;
+        text-align: center;
+        margin-top: 30px;
         color: white;
-        margin-right: -5px;
       }
       .p1{
           color: black;
           text-align: center;
       }
       .p_posi1{
-        text-align:right;
-        margin-top: -34.5px;
-        margin-right: 85px;
+        text-align:center;
+        margin-top: 30px;
+        margin-right: 50px;
         color: white;
       }
       img{
           margin-left: 60px;
           margin-left: 14px;
           max-width: 125px;
+      }
+      .center{
+            text-align: center;
       }
 }

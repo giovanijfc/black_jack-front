@@ -8,14 +8,20 @@
 
 
 <ion-content padding class="bg_Match"> 
+  <div class="center">
   <p class="p1">Departure n°: {{idPartida}} </p>
   <p class="p2">Status match: {{partidaFinalize}}</p>
   <p class="p3">Your Letters / Your Quantity: {{soma}} </p>
-  <button ion-button class="btn1"  (click)= "start()"><p class="p_button">Start picking up</p></button>
-  <button ion-button class="btn2"  (click)= "proceed()"><p class="p_button">Keep on picking up</p></button>
-  <button ion-button class="btn3"  (click)= "notProceed()"><p class="p_button">Stop picking up</p></button>
+      <button ion-button class="btn1"  (click)= "start()"><p class="p_button">Start picking up</p></button>
+      <button ion-button class="btn2"  (click)= "proceed()"><p class="p_button">Keep on picking up</p></button>
+      <button ion-button class="btn3"  (click)= "notProceed()"><p class="p_button">Stop picking up</p></button>
+  </div>
+    <img *ngFor="let cImgs of urls " [src]="cImgs.urlGrande" >
+  <div class="left">
   <ion-label class="label" stacked (click)="showMachineChart()">Show Machine Chart</ion-label>
-  <img *ngFor="let cImgs of urls " [src]="cImgs.urlGrande" >
+  </div>
+      
+  
  
   
 </ion-content>

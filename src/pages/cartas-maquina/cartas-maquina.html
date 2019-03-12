@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>cartasMaquina</ion-title>
+    <ion-title>Machine Char</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,7 +15,7 @@
 
 <ion-content padding class="bg_Match">
 <p class="p1">Departure n°: {{partidaId}} </p>
-<p class="white" class="center">Machine Char/Machine Quantity: </p> <p  class="white"  class="p_posi" *ngIf="soma == 0" margin-left>Spying your turn</p> <p class="white" class="p_posi1" *ngIf="soma != 0" margin-left>{{soma}}</p>  
+<div class="center"><p  class="white"  class="p_posi" *ngIf="soma == 0" margin-left>Machine quantity: Spying your turn</p> <p class="white" class="p_posi1" *ngIf="soma != 0" margin-left>Machine quantity: {{soma}}</p> </div> 
 
 <img *ngFor="let cImgs of urls " [src]="cImgs.urlGrande" >
 
